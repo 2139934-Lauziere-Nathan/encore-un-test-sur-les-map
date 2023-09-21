@@ -2264,7 +2264,3 @@ texture = ExtResource("2_n5hkp")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 limit_left = 34
-
-[node name="tuer2" type="Node" parent="."]
-
-[node name="tuer" type="Node" parent="."]
