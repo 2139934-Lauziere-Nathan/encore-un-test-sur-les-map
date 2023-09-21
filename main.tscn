@@ -2263,4 +2263,5 @@ shape = SubResource("CircleShape2D_6th56")
 texture = ExtResource("2_n5hkp")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(2, 2)
 limit_left = 34
