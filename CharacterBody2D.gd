@@ -3,20 +3,23 @@ extends CharacterBody2D
 var speed = 300.0
 var jump_speed = 400.0
 
-# Get the gravity from the project settings so you can sync with rigid body nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var is_jumping = false
 
+# Get the gravity from the project settings so you can sync with rigid body nodes.
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") 
+	
 
 func _physics_process(delta):
-	# Add the gravity.
-	velocity.y += gravity * delta
-
-	# Handle Jump.
-	if Input.is_action_pressed("saut"):
-		# Apply an upward force to make the character jump
+	
+		#LIGNE À MODIFIÉ POUR ENLEVÉ LE FLY
+	if Input.is_action_pressed("saut"): #and not is_jumping:
 		velocity.y = -jump_speed
+		is_jumping = true  
 	else:
-		velocity.y += gravity * delta  # Apply gravity to simulate falling
+		velocity.y += gravity * delta 
+
+	if is_on_floor():
+		is_jumping = false
 
 
 	# Get the input direction.
