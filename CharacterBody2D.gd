@@ -12,7 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta):
 	
 		#LIGNE À MODIFIÉ POUR ENLEVÉ LE FLY
-	if Input.is_action_pressed("saut"):# and not is_jumping:
+	if Input.is_action_pressed("saut") and not is_jumping:
 		velocity.y = -jump_speed
 		is_jumping = true  
 	else:
