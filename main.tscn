@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="2_aj4u7"]
 [ext_resource type="Texture2D" uid="uid://c8obdeog6b0e6" path="res://assets/Tilemap/industrial.v2.png" id="2_tuc1n"]
 [ext_resource type="Texture2D" uid="uid://bombp0u8i5g80" path="res://assets/background/wp8077675.jpg" id="3_6wt58"]
-[ext_resource type="Texture2D" uid="uid://bwkj8kpbrl5r1" path="res://assets/Sprite/pixil-layer-Background.png" id="5_4ns6g"]
+[ext_resource type="Texture2D" path="res://assets/Sprite/pixil-layer-Background.png" id="5_4ns6g"]
 [ext_resource type="Script" path="res://Scripts/pique.gd" id="6_gqu6x"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r0lhs"]
