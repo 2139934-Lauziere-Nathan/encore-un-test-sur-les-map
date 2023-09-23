@@ -12,7 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta):
 	
 		#LIGNE À MODIFIÉ POUR ENLEVÉ LE FLY
-	if Input.is_action_pressed("saut"):# and not is_jumping:
+	if Input.is_action_pressed("saut") and not is_jumping:
 		velocity.y = -jump_speed
 		is_jumping = true  
 	else:
@@ -23,26 +23,7 @@ func _physics_process(delta):
 
 
 	# Get the input direction.
-	if Input.is_action_pressed("mouvement-droit") || Input.is_action_pressed("mouvement-droit"):
-		var direction = Input.get_axis("mouvement-gauche", "mouvement-droit")
-		velocity.x = direction * speed
-	#else:
-	#	velocity.x = 0
-	#	velocity.y = 0
-		
-	if  Input.is_action_pressed("mouvement-gauche"):
-		var direction = Input.get_axis("mouvement-gauche", "mouvement-droit")
-		velocity.x = direction * speed
-	#else:
-	#	velocity.x = 0
-	#	velocity.y = 0
-		
-	
-	
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		$run_anim.play()
-	else:
-		$run_anim.stop()	
-		
+	var direction = Input.get_axis("mouvement-gauche", "mouvement-droit")
+	velocity.x = direction * speed
+
 	move_and_slide()
