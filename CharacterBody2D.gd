@@ -20,7 +20,26 @@ func _physics_process(delta):
 
 
 	# Get the input direction.
-	var direction = Input.get_axis("mouvement-gauche", "mouvement-droit")
-	velocity.x = direction * speed
-
+	if Input.is_action_pressed("mouvement-droit") || Input.is_action_pressed("mouvement-droit"):
+		var direction = Input.get_axis("mouvement-gauche", "mouvement-droit")
+		velocity.x = direction * speed
+	#else:
+	#	velocity.x = 0
+	#	velocity.y = 0
+		
+	if  Input.is_action_pressed("mouvement-gauche"):
+		var direction = Input.get_axis("mouvement-gauche", "mouvement-droit")
+		velocity.x = direction * speed
+	#else:
+	#	velocity.x = 0
+	#	velocity.y = 0
+		
+	
+	
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed
+		$run_anim.play()
+	else:
+		$run_anim.stop()	
+		
 	move_and_slide()
