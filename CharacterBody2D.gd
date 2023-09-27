@@ -2,13 +2,17 @@ extends CharacterBody2D
 
 var speed = 300.0
 var jump_speed = 400.0
-var life = 5
+var life = Global.life
 var is_jumping = false
 
 # Get the gravity from the project settings so you can sync with rigid body nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") 
 	
-
+func death():
+	if (life == 0):
+		print_debug(life)
+		get_tree().change_scene_to_file("res://Scenes/gameOverScreen.tscn")
+	
 func _physics_process(delta):
 	
 		#LIGNE À MODIFIÉ POUR ENLEVÉ LE FLY

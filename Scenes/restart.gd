@@ -11,5 +11,7 @@ func _process(delta):
 	pass
 
 func _pressed():
-	get_tree().change_scene_to_file("res://encore un test sur les map/Scenes/maintest2.tscn")
+	Global.etas = 0
+	Global.life = 3
+	get_tree().change_scene_to_file("res://Scenes/maintest2.tscn")
 	

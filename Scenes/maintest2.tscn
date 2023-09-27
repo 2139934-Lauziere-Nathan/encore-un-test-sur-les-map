@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b0md81bsu4i6n"]
+[gd_scene load_steps=20 format=3 uid="uid://b0md81bsu4i6n"]
 
 [ext_resource type="Texture2D" uid="uid://dm5wbsy4ar3p8" path="res://assets/Tilemap/Tileset.png" id="1_ya5ts"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="2_aj4u7"]
@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bombp0u8i5g80" path="res://assets/background/wp8077675.jpg" id="3_6wt58"]
 [ext_resource type="Texture2D" uid="uid://bwkj8kpbrl5r1" path="res://assets/Sprite/pixil-layer-Background.png" id="5_4ns6g"]
 [ext_resource type="Script" path="res://Scripts/pique.gd" id="6_gqu6x"]
+[ext_resource type="Script" path="res://Scripts/CollisionShapeItemHeal.gd" id="6_lhjm3"]
+[ext_resource type="Script" path="res://Scenes/ItemHeal.gd" id="6_m5prb"]
+[ext_resource type="Texture2D" uid="uid://bhols5wqpvbq2" path="res://assets/Sprite/SpriteItem/heart-png-hd-download-png-image-heart-png-hd-999.png" id="7_1irox"]
+[ext_resource type="Script" path="res://Scenes/CollisionShape2D.gd" id="7_v43ek"]
+[ext_resource type="Script" path="res://Scenes/Vie.gd" id="8_l0kpv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r0lhs"]
 
@@ -2240,6 +2245,11 @@ custom_data_layer_0/type = 2
 sources/0 = SubResource("TileSetAtlasSource_1dnbk")
 sources/1 = SubResource("TileSetAtlasSource_iy3e3")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0susu"]
+size = Vector2(48, 4)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ehs04"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1j8y2"]
 size = Vector2(18, 30)
 
@@ -2256,9 +2266,6 @@ func _ready():
 func _process(delta):
 	pass
 "
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0susu"]
-size = Vector2(48, 4)
 
 [node name="Main" type="Node"]
 
@@ -2287,16 +2294,28 @@ position = Vector2(974, 138)
 scale = Vector2(1.03906, 1.32407)
 texture = ExtResource("3_6wt58")
 
-[node name="GUI" type="MarginContainer" parent="Node2D/TileMap"]
-anchors_preset = -1
-anchor_top = -0.025
-anchor_right = 0.016
-offset_top = -2.0
-offset_right = 20.568
-offset_bottom = 24.8
+[node name="Spike" type="Area2D" parent="Node2D/TileMap"]
+position = Vector2(-1, 1)
+script = ExtResource("6_gqu6x")
 
-[node name="vies" type="HBoxContainer" parent="Node2D/TileMap/GUI"]
-layout_mode = 2
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TileMap/Spike"]
+light_mask = 0
+position = Vector2(713, 109)
+shape = SubResource("RectangleShape2D_0susu")
+script = ExtResource("7_v43ek")
+
+[node name="ItemHeal" type="StaticBody2D" parent="Node2D/TileMap"]
+position = Vector2(798, -24)
+script = ExtResource("6_m5prb")
+
+[node name="CollisionShapeItemHeal" type="CollisionShape2D" parent="Node2D/TileMap/ItemHeal"]
+shape = SubResource("CircleShape2D_ehs04")
+script = ExtResource("6_lhjm3")
+
+[node name="SpriteItemHeal" type="Sprite2D" parent="Node2D/TileMap/ItemHeal"]
+position = Vector2(0, 2)
+scale = Vector2(0.0182683, 0.0193548)
+texture = ExtResource("7_1irox")
 
 [node name="PersonnagePrincipal" type="CharacterBody2D" parent="."]
 safe_margin = 0.001
@@ -2314,10 +2333,27 @@ zoom = Vector2(2, 2)
 limit_left = -25
 script = SubResource("GDScript_f7gsk")
 
-[node name="Spike" type="Area2D" parent="."]
-script = ExtResource("6_gqu6x")
+[node name="Control" type="Control" parent="PersonnagePrincipal"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike"]
-light_mask = 0
-position = Vector2(713, 109)
-shape = SubResource("RectangleShape2D_0susu")
+[node name="CanvasLayer" type="CanvasLayer" parent="PersonnagePrincipal/Control"]
+
+[node name="ui" type="Control" parent="PersonnagePrincipal/Control/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PersonnagePrincipal/Control/CanvasLayer/ui"]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Vie" type="Label" parent="PersonnagePrincipal/Control/CanvasLayer/ui/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("8_l0kpv")
+
+[connection signal="body_entered" from="Node2D/TileMap/Spike" to="Node2D/TileMap/Spike" method="_on_body_entered"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://wcelq6v7jqbq"]
+
+[ext_resource type="Script" path="res://Scripts/CollisionShapeItemHeal.gd" id="1_blnj5"]
+[ext_resource type="Texture2D" uid="uid://bhols5wqpvbq2" path="res://assets/Sprite/SpriteItem/heart-png-hd-download-png-image-heart-png-hd-999.png" id="1_hpfnw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pg78q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4t0k"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ItemHeal" type="StaticBody2D" parent="."]
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_pg78q")
+
+[node name="CollisionShapeItemHeal" type="CollisionShape2D" parent="ItemHeal"]
+shape = SubResource("CircleShape2D_g4t0k")
+script = ExtResource("1_blnj5")
+
+[node name="SpriteItemHeal" type="Sprite2D" parent="ItemHeal"]
+position = Vector2(0, 2)
+scale = Vector2(0.0182683, 0.0193548)
+texture = ExtResource("1_hpfnw")
