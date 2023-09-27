@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://0gsgkqi5wnjr"]
+
+[ext_resource type="Script" path="res://start.gd" id="1_hha4o"]
+[ext_resource type="Script" path="res://Scripts/quit.gd" id="2_r4di4"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(551, 177)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="start" type="Button" parent="CanvasLayer"]
+offset_left = 530.0
+offset_top = 251.0
+offset_right = 575.0
+offset_bottom = 282.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "start"
+script = ExtResource("1_hha4o")
+
+[node name="quit" type="Button" parent="CanvasLayer"]
+offset_left = 530.0
+offset_top = 429.0
+offset_right = 569.0
+offset_bottom = 460.0
+text = "quit"
+script = ExtResource("2_r4di4")

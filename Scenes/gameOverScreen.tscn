@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbc3ay54dab57"]
+
+[ext_resource type="Texture2D" uid="uid://bxv1a2skwjdv7" path="res://assets/background/wallpapers-black.jpg" id="1_0aefb"]
+[ext_resource type="Script" path="res://Scenes/MainMenu.gd" id="2_5qbnq"]
+[ext_resource type="Script" path="res://Scenes/restart.gd" id="3_7egvr"]
+[ext_resource type="Script" path="res://Scenes/quit.gd" id="4_na0m7"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-1, 1)
+
+[node name="Container" type="Container" parent="."]
+offset_right = 1154.0
+offset_bottom = 645.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Container"]
+follow_viewport_scale = 820.047
+
+[node name="TextureRect" type="TextureRect" parent="Container/CanvasLayer"]
+visibility_layer = 16
+anchors_preset = -1
+anchor_right = 0.690104
+anchor_bottom = 0.66821
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 359.0
+offset_bottom = 221.0
+texture = ExtResource("1_0aefb")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Container/CanvasLayer"]
+offset_left = 493.0
+offset_top = 233.0
+offset_right = 589.0
+offset_bottom = 264.0
+script = ExtResource("2_5qbnq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="Container/CanvasLayer"]
+offset_left = 493.0
+offset_top = 366.0
+offset_right = 590.0
+offset_bottom = 396.0
+script = ExtResource("3_7egvr")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="Button" parent="Container/CanvasLayer"]
+offset_left = 503.0
+offset_top = 468.0
+offset_right = 597.0
+offset_bottom = 498.0
+script = ExtResource("4_na0m7")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Container/CanvasLayer"]
+offset_left = 497.0
+offset_top = 237.0
+offset_right = 585.0
+offset_bottom = 263.0
+text = "Main Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Container/CanvasLayer"]
+offset_left = 503.0
+offset_top = 367.0
+offset_right = 590.0
+offset_bottom = 393.0
+text = "   Restart"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="Container/CanvasLayer"]
+offset_left = 511.0
+offset_top = 475.0
+offset_right = 598.0
+offset_bottom = 501.0
+text = "      	Quit
+"
+metadata/_edit_use_anchors_ = true
