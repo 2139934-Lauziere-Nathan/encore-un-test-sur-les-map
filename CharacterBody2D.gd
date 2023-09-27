@@ -4,26 +4,29 @@ var speed = 300.0
 var jump_speed = 400.0
 var life = Global.life
 var is_jumping = false
-
+var double_saut = 0
 # Get the gravity from the project settings so you can sync with rigid body nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") 
 	
-func death():
-	if (life == 0):
-		print_debug(life)
-		get_tree().change_scene_to_file("res://Scenes/gameOverScreen.tscn")
+
 	
 func _physics_process(delta):
-	
-		#LIGNE À MODIFIÉ POUR ENLEVÉ LE FLY
-	if Input.is_action_pressed("saut") and not is_jumping:
-		velocity.y = -jump_speed
-		is_jumping = true  
+	if Input.is_action_just_pressed("saut") and is_on_floor():
+			velocity.y = (0.8 -jump_speed )
+			double_saut = 1
+			print_debug("FIR")
+			
+	if Input.is_action_just_pressed("saut") and double_saut == 1  and !is_on_floor():
+			velocity.y = (1 * -jump_speed )
+			double_saut = 0
+			print_debug("SEK")
+			
+
 	else:
 		velocity.y += gravity * delta 
-
+	
 	if is_on_floor():
-		is_jumping = false
+		double_saut = 1
 
 
 	# Get the input direction.
