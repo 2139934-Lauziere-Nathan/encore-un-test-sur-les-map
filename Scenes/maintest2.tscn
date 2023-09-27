@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b0md81bsu4i6n"]
+[gd_scene load_steps=41 format=3 uid="uid://b0md81bsu4i6n"]
 
 [ext_resource type="Texture2D" uid="uid://dm5wbsy4ar3p8" path="res://assets/Tilemap/Tileset.png" id="1_ya5ts"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="2_aj4u7"]
@@ -6,11 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://bombp0u8i5g80" path="res://assets/background/wp8077675.jpg" id="3_6wt58"]
 [ext_resource type="Texture2D" uid="uid://bwkj8kpbrl5r1" path="res://assets/Sprite/pixil-layer-Background.png" id="5_4ns6g"]
 [ext_resource type="Script" path="res://Scripts/pique.gd" id="6_gqu6x"]
-[ext_resource type="Script" path="res://Scripts/CollisionShapeItemHeal.gd" id="6_lhjm3"]
 [ext_resource type="Script" path="res://Scenes/ItemHeal.gd" id="6_m5prb"]
 [ext_resource type="Texture2D" uid="uid://bhols5wqpvbq2" path="res://assets/Sprite/SpriteItem/heart-png-hd-download-png-image-heart-png-hd-999.png" id="7_1irox"]
 [ext_resource type="Script" path="res://Scenes/CollisionShape2D.gd" id="7_v43ek"]
 [ext_resource type="Script" path="res://Scenes/Vie.gd" id="8_l0kpv"]
+[ext_resource type="Script" path="res://CharacterBody2DEnnemis.gd" id="12_mvyul"]
+[ext_resource type="Texture2D" uid="uid://b4p6akdjru14b" path="res://assets/Sprite/spriteEnemis/Punk_idle.png" id="13_kk5ie"]
+[ext_resource type="Texture2D" uid="uid://c8ykpjt77x238" path="res://assets/Sprite/spriteEnemis/Punk_run.png" id="14_ck0ls"]
+[ext_resource type="Texture2D" uid="uid://oqtftxvmo8jn" path="res://assets/Sprite/spriteEnemis/Punk_punch.png" id="15_71uxj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r0lhs"]
 
@@ -2248,8 +2251,6 @@ sources/1 = SubResource("TileSetAtlasSource_iy3e3")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0susu"]
 size = Vector2(48, 4)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ehs04"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1j8y2"]
 size = Vector2(18, 30)
 
@@ -2266,6 +2267,140 @@ func _ready():
 func _process(delta):
 	pass
 "
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx4bj"]
+atlas = ExtResource("13_kk5ie")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ex0l3"]
+atlas = ExtResource("13_kk5ie")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aeota"]
+atlas = ExtResource("13_kk5ie")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yneie"]
+atlas = ExtResource("13_kk5ie")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yh1co"]
+atlas = ExtResource("14_ck0ls")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwrdk"]
+atlas = ExtResource("14_ck0ls")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ahby"]
+atlas = ExtResource("14_ck0ls")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0bw7"]
+atlas = ExtResource("14_ck0ls")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdt31"]
+atlas = ExtResource("14_ck0ls")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmosp"]
+atlas = ExtResource("14_ck0ls")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdki0"]
+atlas = ExtResource("15_71uxj")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcmtm"]
+atlas = ExtResource("15_71uxj")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di3cc"]
+atlas = ExtResource("15_71uxj")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihby2"]
+atlas = ExtResource("15_71uxj")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ducv3"]
+atlas = ExtResource("15_71uxj")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41hoo"]
+atlas = ExtResource("15_71uxj")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1wxbe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx4bj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ex0l3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aeota")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yneie")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yh1co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwrdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ahby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0bw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdt31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmosp")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdki0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcmtm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di3cc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihby2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ducv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41hoo")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uiqaq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t018o"]
 
 [node name="Main" type="Node"]
 
@@ -2307,10 +2442,6 @@ script = ExtResource("7_v43ek")
 [node name="ItemHeal" type="StaticBody2D" parent="Node2D/TileMap"]
 position = Vector2(798, -24)
 script = ExtResource("6_m5prb")
-
-[node name="CollisionShapeItemHeal" type="CollisionShape2D" parent="Node2D/TileMap/ItemHeal"]
-shape = SubResource("CircleShape2D_ehs04")
-script = ExtResource("6_lhjm3")
 
 [node name="SpriteItemHeal" type="Sprite2D" parent="Node2D/TileMap/ItemHeal"]
 position = Vector2(0, 2)
@@ -2356,4 +2487,29 @@ offset_bottom = 40.0
 layout_mode = 2
 script = ExtResource("8_l0kpv")
 
+[node name="CharacterBody2DEnnemis" type="CharacterBody2D" parent="."]
+position = Vector2(489, -25)
+script = ExtResource("12_mvyul")
+
+[node name="AnimatedSprite2DEnemis" type="AnimatedSprite2D" parent="CharacterBody2DEnnemis"]
+position = Vector2(7, -9)
+sprite_frames = SubResource("SpriteFrames_1wxbe")
+animation = &"Idle"
+frame_progress = 0.54447
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2DEnnemis"]
+shape = SubResource("CapsuleShape2D_uiqaq")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2DEnnemis"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2DEnnemis/Area2D"]
+position = Vector2(19, 0)
+shape = SubResource("RectangleShape2D_t018o")
+
+[node name="RayCast2D" type="RayCast2D" parent="CharacterBody2DEnnemis"]
+position = Vector2(20, -8)
+
 [connection signal="body_entered" from="Node2D/TileMap/Spike" to="Node2D/TileMap/Spike" method="_on_body_entered"]
+[connection signal="child_entered_tree" from="Node2D/TileMap/ItemHeal" to="Node2D/TileMap/Spike" method="_on_item_heal_child_entered_tree"]
+[connection signal="body_entered" from="CharacterBody2DEnnemis/Area2D" to="CharacterBody2DEnnemis" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="CharacterBody2DEnnemis/Area2D" to="CharacterBody2DEnnemis" method="_on_area_2d_body_exited"]
