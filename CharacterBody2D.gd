@@ -40,6 +40,7 @@ func _physics_process(delta):
 		double_saut = 1
 		dash = 1
 		velocity.x = direction * speed
+		
 
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b0md81bsu4i6n"]
+[gd_scene load_steps=43 format=3 uid="uid://b0md81bsu4i6n"]
 
 [ext_resource type="Texture2D" uid="uid://dm5wbsy4ar3p8" path="res://assets/Tilemap/Tileset.png" id="1_ya5ts"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="2_aj4u7"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scenes/ItemHeal.gd" id="6_m5prb"]
 [ext_resource type="Texture2D" uid="uid://bhols5wqpvbq2" path="res://assets/Sprite/SpriteItem/heart-png-hd-download-png-image-heart-png-hd-999.png" id="7_1irox"]
 [ext_resource type="Script" path="res://Scenes/CollisionShape2D.gd" id="7_v43ek"]
+[ext_resource type="Script" path="res://Scenes/heal.gd" id="8_7phux"]
 [ext_resource type="Script" path="res://Scenes/Vie.gd" id="8_l0kpv"]
 [ext_resource type="Script" path="res://CharacterBody2DEnnemis.gd" id="12_mvyul"]
 [ext_resource type="Texture2D" uid="uid://b4p6akdjru14b" path="res://assets/Sprite/spriteEnemis/Punk_idle.png" id="13_kk5ie"]
@@ -2251,6 +2252,10 @@ sources/1 = SubResource("TileSetAtlasSource_iy3e3")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0susu"]
 size = Vector2(48, 4)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ukoht"]
+radius = 9.0
+height = 20.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1j8y2"]
 size = Vector2(18, 30)
 
@@ -2447,6 +2452,11 @@ script = ExtResource("6_m5prb")
 position = Vector2(0, 2)
 scale = Vector2(0.0182683, 0.0193548)
 texture = ExtResource("7_1irox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TileMap/ItemHeal"]
+shape = SubResource("CapsuleShape2D_ukoht")
+one_way_collision_margin = 0.0
+script = ExtResource("8_7phux")
 
 [node name="PersonnagePrincipal" type="CharacterBody2D" parent="."]
 safe_margin = 0.001

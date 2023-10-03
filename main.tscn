@@ -2240,6 +2240,9 @@ custom_data_layer_0/type = 2
 sources/0 = SubResource("TileSetAtlasSource_1dnbk")
 sources/1 = SubResource("TileSetAtlasSource_iy3e3")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0susu"]
+size = Vector2(48, 4)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1j8y2"]
 size = Vector2(18, 30)
 
@@ -2256,9 +2259,6 @@ func _ready():
 func _process(delta):
 	pass
 "
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0susu"]
-size = Vector2(48, 4)
 
 [node name="Main" type="Node"]
 
@@ -2287,16 +2287,14 @@ position = Vector2(974, 138)
 scale = Vector2(1.03906, 1.32407)
 texture = ExtResource("3_6wt58")
 
-[node name="GUI" type="MarginContainer" parent="Node2D/TileMap"]
-anchors_preset = -1
-anchor_top = -0.025
-anchor_right = 0.016
-offset_top = -2.0
-offset_right = 20.568
-offset_bottom = 24.8
+[node name="Spike" type="Area2D" parent="Node2D/TileMap"]
+position = Vector2(-1, 1)
+script = ExtResource("6_gqu6x")
 
-[node name="vies" type="HBoxContainer" parent="Node2D/TileMap/GUI"]
-layout_mode = 2
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TileMap/Spike"]
+light_mask = 0
+position = Vector2(713, 109)
+shape = SubResource("RectangleShape2D_0susu")
 
 [node name="PersonnagePrincipal" type="CharacterBody2D" parent="."]
 safe_margin = 0.001
@@ -2314,10 +2312,14 @@ zoom = Vector2(2, 2)
 limit_left = -25
 script = SubResource("GDScript_f7gsk")
 
-[node name="Spike" type="Area2D" parent="."]
-script = ExtResource("6_gqu6x")
+[node name="GUI" type="MarginContainer" parent="."]
+anchors_preset = -1
+anchor_top = -0.025
+anchor_right = 0.016
+offset_left = 1.0
+offset_top = 13.2
+offset_right = 21.568
+offset_bottom = 40.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike"]
-light_mask = 0
-position = Vector2(713, 109)
-shape = SubResource("RectangleShape2D_0susu")
+[node name="vies" type="HBoxContainer" parent="GUI"]
+layout_mode = 2
