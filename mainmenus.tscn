@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/quit.gd" id="2_r4di4"]
 [ext_resource type="Texture2D" uid="uid://buv2pd3yrw3h1" path="res://assets/background/placeholder.png" id="3_jdaya"]
 
-[node name="MainMenu" type="Node2D"]
+[node name="Node2D" type="Node2D"]
 position = Vector2(551, 177)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

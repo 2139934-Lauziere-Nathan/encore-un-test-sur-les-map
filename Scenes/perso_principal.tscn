@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://by1cpqvqamjg4"]
 
-[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_tj5yo"]
+[ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="1_7qkim"]
 [ext_resource type="Texture2D" uid="uid://bwkj8kpbrl5r1" path="res://assets/Sprite/pixil-layer-Background.png" id="2_8bedo"]
-[ext_resource type="Script" path="res://Scenes/Vie.gd" id="3_ltfkk"]
+[ext_resource type="Script" path="res://Scripts/Vie.gd" id="3_3buku"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khmkm"]
 size = Vector2(18, 30)
@@ -25,7 +25,7 @@ func _process(delta):
 
 [node name="PersonnagePrincipal2" type="CharacterBody2D" parent="."]
 safe_margin = 0.001
-script = ExtResource("1_tj5yo")
+script = ExtResource("1_7qkim")
 
 [node name="colisionPerso" type="CollisionShape2D" parent="PersonnagePrincipal2"]
 position = Vector2(0, -1)
@@ -60,4 +60,4 @@ offset_bottom = 40.0
 
 [node name="Vie" type="Label" parent="PersonnagePrincipal2/Control/CanvasLayer/ui/VBoxContainer"]
 layout_mode = 2
-script = ExtResource("3_ltfkk")
+script = ExtResource("3_3buku")

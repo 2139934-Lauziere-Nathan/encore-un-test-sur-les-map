@@ -15,10 +15,10 @@ func _plusUneVie():
 	
 	life= life+1
 func death():
-	if etas == 0:
-		if life == 0:
-			etas = 1
-			get_tree().change_scene_to_file("res://Scenes/gameOverScreen.tscn")
+	if etas == 0 && life <= 0:
+		
+		etas = 1
+		get_tree().change_scene_to_file("res://Scenes/gameOverScreen.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

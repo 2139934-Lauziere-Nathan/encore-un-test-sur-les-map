@@ -1,13 +1,13 @@
 [gd_scene load_steps=14 format=3 uid="uid://b0md81bsu4i6n"]
 
-[ext_resource type="Script" path="res://Scenes/NewGlobal.gd" id="1_ysrbi"]
+[ext_resource type="Script" path="res://Scripts/NewGlobal.gd" id="1_8jikr"]
 [ext_resource type="Texture2D" uid="uid://dm5wbsy4ar3p8" path="res://assets/Tilemap/Tileset.png" id="2_omjl8"]
 [ext_resource type="Texture2D" uid="uid://bombp0u8i5g80" path="res://assets/background/wp8077675.jpg" id="3_6wt58"]
 [ext_resource type="Texture2D" uid="uid://c8obdeog6b0e6" path="res://assets/Tilemap/industrial.v2.png" id="3_auvyy"]
-[ext_resource type="PackedScene" uid="uid://bnbakww7fvl4a" path="res://Scripts/Ennemis.tscn" id="5_ab6uy"]
-[ext_resource type="PackedScene" uid="uid://wcelq6v7jqbq" path="res://Scripts/ItemVie.tscn" id="6_h3qmx"]
-[ext_resource type="PackedScene" uid="uid://by1cpqvqamjg4" path="res://perso_principal.tscn" id="7_48vov"]
-[ext_resource type="PackedScene" uid="uid://b3s36wyyw5583" path="res://flag_fin_niveau.tscn" id="8_vmj7h"]
+[ext_resource type="PackedScene" uid="uid://bnbakww7fvl4a" path="res://Scenes/Ennemis.tscn" id="5_ab6uy"]
+[ext_resource type="PackedScene" uid="uid://wcelq6v7jqbq" path="res://Scenes/ItemVie.tscn" id="6_h3qmx"]
+[ext_resource type="PackedScene" uid="uid://by1cpqvqamjg4" path="res://Scenes/perso_principal.tscn" id="7_48vov"]
+[ext_resource type="PackedScene" uid="uid://b3s36wyyw5583" path="res://Scenes/flag_fin_niveau.tscn" id="8_vmj7h"]
 [ext_resource type="PackedScene" uid="uid://dmip38p01y58v" path="res://Scenes/spike.tscn" id="9_2ttqc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r0lhs"]
@@ -2244,7 +2244,7 @@ sources/0 = SubResource("TileSetAtlasSource_1dnbk")
 sources/1 = SubResource("TileSetAtlasSource_iy3e3")
 
 [node name="Main" type="Node"]
-script = ExtResource("1_ysrbi")
+script = ExtResource("1_8jikr")
 
 [node name="Niveau1" type="Node2D" parent="."]
 

@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://dm5wbsy4ar3p8" path="res://assets/Tilemap/Tileset.png" id="1_cxn7e"]
 [ext_resource type="Texture2D" uid="uid://c8obdeog6b0e6" path="res://assets/Tilemap/industrial.v2.png" id="2_exf2g"]
 [ext_resource type="Texture2D" uid="uid://bombp0u8i5g80" path="res://assets/background/wp8077675.jpg" id="3_gaxw6"]
-[ext_resource type="PackedScene" uid="uid://b3s36wyyw5583" path="res://flag_fin_niveau.tscn" id="4_svwi0"]
-[ext_resource type="PackedScene" uid="uid://bnbakww7fvl4a" path="res://Scripts/Ennemis.tscn" id="5_moi6c"]
-[ext_resource type="PackedScene" uid="uid://wcelq6v7jqbq" path="res://Scripts/ItemVie.tscn" id="6_ascs2"]
-[ext_resource type="PackedScene" uid="uid://by1cpqvqamjg4" path="res://perso_principal.tscn" id="7_f7qrl"]
+[ext_resource type="PackedScene" uid="uid://b3s36wyyw5583" path="res://Scenes/flag_fin_niveau.tscn" id="4_svwi0"]
+[ext_resource type="PackedScene" uid="uid://bnbakww7fvl4a" path="res://Scenes/Ennemis.tscn" id="5_moi6c"]
+[ext_resource type="PackedScene" uid="uid://wcelq6v7jqbq" path="res://Scenes/ItemVie.tscn" id="6_ascs2"]
+[ext_resource type="PackedScene" uid="uid://by1cpqvqamjg4" path="res://Scenes/perso_principal.tscn" id="7_f7qrl"]
 [ext_resource type="PackedScene" uid="uid://dmip38p01y58v" path="res://Scenes/spike.tscn" id="8_gpxa8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3itr5"]
@@ -2255,3 +2255,6 @@ position = Vector2(377, -40)
 
 [node name="Spike" parent="TileMap" instance=ExtResource("8_gpxa8")]
 position = Vector2(713, 103)
+
+[node name="Spike2" parent="TileMap" instance=ExtResource("8_gpxa8")]
+position = Vector2(1347, 472)

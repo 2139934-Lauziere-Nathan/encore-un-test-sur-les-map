@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dbc3ay54dab57"]
 
-[ext_resource type="Texture2D" uid="uid://bxv1a2skwjdv7" path="res://assets/background/wallpapers-black.jpg" id="1_0aefb"]
-[ext_resource type="Script" path="res://Scenes/MainMenu.gd" id="2_5qbnq"]
-[ext_resource type="Script" path="res://Scenes/restart.gd" id="3_7egvr"]
-[ext_resource type="Script" path="res://Scenes/quit.gd" id="4_na0m7"]
+[ext_resource type="Texture2D" uid="uid://bxv1a2skwjdv7" path="res://assets/background/wallpapers-black.jpg" id="1_u74kf"]
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="2_h4e53"]
+[ext_resource type="Script" path="res://Scripts/quit (2).gd" id="3_3kx7f"]
+[ext_resource type="Script" path="res://Scripts/restart.gd" id="4_a08dc"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-1, 1)
@@ -24,7 +24,7 @@ offset_left = -1.0
 offset_top = 1.0
 offset_right = 359.0
 offset_bottom = 221.0
-texture = ExtResource("1_0aefb")
+texture = ExtResource("1_u74kf")
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Container/CanvasLayer"]
@@ -52,7 +52,7 @@ alignment = 1
 [node name="ButtonMain" type="Button" parent="Container/CanvasLayer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Main Menu"
-script = ExtResource("2_5qbnq")
+script = ExtResource("2_h4e53")
 metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Container/CanvasLayer/VBoxContainer"]
@@ -62,7 +62,7 @@ alignment = 1
 [node name="ButtonQuit" type="Button" parent="Container/CanvasLayer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 text = "Quit"
-script = ExtResource("4_na0m7")
+script = ExtResource("3_3kx7f")
 metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Container/CanvasLayer/VBoxContainer"]
@@ -72,5 +72,5 @@ alignment = 1
 [node name="Button2restart" type="Button" parent="Container/CanvasLayer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 text = "Restart"
-script = ExtResource("3_7egvr")
+script = ExtResource("4_a08dc")
 metadata/_edit_use_anchors_ = true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmip38p01y58v"]
 
-[ext_resource type="Script" path="res://SpikeArea2D.gd" id="1_klvyi"]
+[ext_resource type="Script" path="res://Scripts/SpikeArea2D.gd" id="1_55rlr"]
 [ext_resource type="Texture2D" uid="uid://g4w73mf2ao87" path="res://assets/Tilemap/spike.png" id="2_4fqcx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_px1u2"]
@@ -9,7 +9,7 @@ size = Vector2(15, 10)
 [node name="Spike" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("1_klvyi")
+script = ExtResource("1_55rlr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.5, 5)

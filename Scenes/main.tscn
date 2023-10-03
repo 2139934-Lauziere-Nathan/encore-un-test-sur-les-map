@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://6qk3tdlt1nd3"]
+[gd_scene load_steps=14 format=3 uid="uid://cc3dsq2vrh2qn"]
 
 [ext_resource type="Texture2D" uid="uid://dm5wbsy4ar3p8" path="res://assets/Tilemap/Tileset.png" id="1_ya5ts"]
-[ext_resource type="Script" path="res://CharacterBody2D.gd" id="2_aj4u7"]
 [ext_resource type="Texture2D" uid="uid://c8obdeog6b0e6" path="res://assets/Tilemap/industrial.v2.png" id="2_tuc1n"]
 [ext_resource type="Texture2D" uid="uid://bombp0u8i5g80" path="res://assets/background/wp8077675.jpg" id="3_6wt58"]
+[ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="4_6yk2u"]
 [ext_resource type="Texture2D" uid="uid://bwkj8kpbrl5r1" path="res://assets/Sprite/pixil-layer-Background.png" id="5_4ns6g"]
 [ext_resource type="Script" path="res://Scripts/pique.gd" id="6_gqu6x"]
 
@@ -2300,7 +2300,7 @@ layout_mode = 2
 
 [node name="PersonnagePrincipal" type="CharacterBody2D" parent="."]
 safe_margin = 0.001
-script = ExtResource("2_aj4u7")
+script = ExtResource("4_6yk2u")
 
 [node name="colisionPerso" type="CollisionShape2D" parent="PersonnagePrincipal"]
 position = Vector2(0, -1)
