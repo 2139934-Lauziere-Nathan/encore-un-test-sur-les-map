@@ -1,4 +1,4 @@
-extends CollisionShape2D
+extends Area2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -9,13 +9,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-		
-	
-func _on_item_heal_child_entered_tree(node):
-	print_debug(Global.life)
-	Global.life+1
-	pass # Replace with function body.
 
-func _on_tree_entered():
-	Global.life-1
+
+func _on_body_entered(body):
+
+	get_tree().change_scene_to_file("res://Scenes/Niveaux2.tscn")
+	print_debug("test")
 	pass # Replace with function body.

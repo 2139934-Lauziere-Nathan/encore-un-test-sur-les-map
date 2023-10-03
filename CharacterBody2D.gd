@@ -14,12 +14,12 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("saut") and is_on_floor():
 			velocity.y = (0.8 -jump_speed )
 			double_saut = 1
-			print_debug("FIR")
+			
 			
 	if Input.is_action_just_pressed("saut") and double_saut == 1  and !is_on_floor():
 			velocity.y = (1 * -jump_speed )
 			double_saut = 0
-			print_debug("SEK")
+			
 			
 
 	else:

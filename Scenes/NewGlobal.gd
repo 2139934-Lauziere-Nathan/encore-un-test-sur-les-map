@@ -6,14 +6,7 @@ var niveau = 0
 #zero menu , 1  - niveau 1 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	pass # Replace with function body.
-func _moinUneVie():
-	
-	life= life-1
-func _plusUneVie():
-	
-	life= life+1
 func death():
 	if etas == 0:
 		if life == 0:
@@ -22,8 +15,6 @@ func death():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
-
 	if etas != 1:
 		death()
 	

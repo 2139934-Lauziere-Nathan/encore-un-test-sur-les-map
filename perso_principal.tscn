@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://by1cpqvqamjg4"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_tj5yo"]
+[ext_resource type="Texture2D" uid="uid://bwkj8kpbrl5r1" path="res://assets/Sprite/pixil-layer-Background.png" id="2_8bedo"]
+[ext_resource type="Script" path="res://Scenes/Vie.gd" id="3_ltfkk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khmkm"]
+size = Vector2(18, 30)
+
+[sub_resource type="GDScript" id="GDScript_ilcfo"]
+script/source = "extends Camera2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="PersoPrincipal" type="Node2D"]
+
+[node name="PersonnagePrincipal2" type="CharacterBody2D" parent="."]
+safe_margin = 0.001
+script = ExtResource("1_tj5yo")
+
+[node name="colisionPerso" type="CollisionShape2D" parent="PersonnagePrincipal2"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_khmkm")
+
+[node name="Spriteperso" type="Sprite2D" parent="PersonnagePrincipal2"]
+texture = ExtResource("2_8bedo")
+
+[node name="Camera2D" type="Camera2D" parent="PersonnagePrincipal2"]
+zoom = Vector2(2, 2)
+limit_left = -25
+script = SubResource("GDScript_ilcfo")
+
+[node name="Control" type="Control" parent="PersonnagePrincipal2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PersonnagePrincipal2/Control"]
+
+[node name="ui" type="Control" parent="PersonnagePrincipal2/Control/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PersonnagePrincipal2/Control/CanvasLayer/ui"]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Vie" type="Label" parent="PersonnagePrincipal2/Control/CanvasLayer/ui/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_ltfkk")

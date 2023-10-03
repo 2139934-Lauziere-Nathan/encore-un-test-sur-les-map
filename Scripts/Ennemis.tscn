@@ -139,7 +139,7 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4r38"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Enemis1" type="Node2D"]
 
 [node name="CharacterBody2DEnnemis" type="CharacterBody2D" parent="."]
 position = Vector2(489, -25)
