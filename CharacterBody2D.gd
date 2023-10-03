@@ -9,7 +9,7 @@ var dash = 1
 # Get the gravity from the project settings so you can sync with rigid body nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") 
 	
-
+	
 	
 func _physics_process(delta):
 	
@@ -28,19 +28,24 @@ func _physics_process(delta):
 			double_saut = 0
 			
 	
-	if Input.is_action_pressed("mouvement-gauche") and Input.is_action_just_pressed("Dash") and !is_on_floor() and dash == 1:
+
+	if Input.is_action_just_pressed("Dash") and !is_on_floor() and dash == 1:
 		velocity.x = (direction * speed) * 15
 		dash = 0
-		
-	if Input.is_action_pressed("mouvement-droit") and Input.is_action_just_pressed("Dash") and !is_on_floor() and dash == 1:
-		velocity.x = (direction * speed) * 15
-		dash = 0
+	
+	
 	
 	if is_on_floor():
 		double_saut = 1
 		dash = 1
 		velocity.x = direction * speed
 		
+	#if is_on_wall():
+		#velocity.y = 0
+		#velocity.y = 0
+		#if Input.is_action_pressed("bas"):
+			#velocity.y = (0.6 +jump_speed )
+			
 
 
 
